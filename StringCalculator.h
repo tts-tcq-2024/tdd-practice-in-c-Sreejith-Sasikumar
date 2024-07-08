@@ -12,6 +12,7 @@ int add(const char *input){
     }
     i++;
   }
+  return sum;
 }
 
 #endif // STRINGCALCULATOR_H
