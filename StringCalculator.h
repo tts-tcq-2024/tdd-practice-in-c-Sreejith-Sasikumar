@@ -1,22 +1,17 @@
-#include <ctype.h>
+#ifndef STRINGCALCULATOR_H
+#define STRINGCALCULATOR_H
 
-bool isEmptyString(const char* input){
-  if (input == NULL || input[0] == '\0') {
-    return 1; // The string is empty
-  }
-  return 0;
-}
+#include "StringCalculator.h"
+#include <ctype.h>
 
 int add(const char *input){
   int sum = 0, i=0;
-  if (isEmptyString(input)){
-    return 0;
-  }else{
-    while(input[i]){
-      if(isdigit(input[i])){
-        sum = sum + (input[i] - '0');
-      }
-      i++;
+  while(input[i]){
+    if(isdigit(input[i])){
+      sum = sum + (input[i] - '0');
     }
+    i++;
   }
 }
+
+#endif // STRINGCALCULATOR_H
