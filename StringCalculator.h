@@ -14,5 +14,24 @@ int add(const char *input){
   }
   return sum;
 }
+/* TO-DO
+int* fetchNumbers(char* str){
+	int nums[]={0,0};
+	int i=0,j=0, sum=0;
+	while(str[i])
+		if(isdigit(str[i])){
+			do{
+				sum = sum*10+(str[i++]-'0');
+			}while(isdigit(str[i]));
+			
+			nums[j++] = sum;
+			sum = 0;
+			i--;
+		}
+		i++;
+	}
+}
+*/
+
 
 #endif // STRINGCALCULATOR_H
