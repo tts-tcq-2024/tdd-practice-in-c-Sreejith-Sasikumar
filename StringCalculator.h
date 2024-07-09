@@ -19,7 +19,7 @@ int add(const char *str){
 		while(isdigit(str[i++])){
 			s = s*10 + str[i-1]-'0';
 		}
-		sumOfDigits(s);
+		//sumOfDigits(s);
 		s=0;
 	}
 	return digitSum;
