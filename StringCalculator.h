@@ -3,9 +3,9 @@
 
 #include "StringCalculator.h"
 #include <ctype.h>
+int nums[]={0,0};
 
-int* fetchNumbers(char* str){
-	int nums[]={0,0};
+void fetchNumbers(const char* str){
 	int i=0,j=0, sum=0;
 	while(str[i]){
 		if(isdigit(str[i])){
@@ -18,31 +18,25 @@ int* fetchNumbers(char* str){
 		}
 		i++;
 	}
-	return nums;
 }
 
-int digitsSum(int a, int b){
-	int sum = 0;
-	while(a){
-		sum = sum + a%10;
-		a/=10;
-	}
-	while(b){
-		sum = sum + b%10;
-		b/=10;
-	}
-	return sum;
-}
-
-int overThousand(int a, int b){
-	a = a>1000?0:a;
-	b = b>1000?0:b;
-	return digitsSum(a,b);
+void overThousand(){
+	nums[0] = nums[0]>1000?0:nums[0];
+	nums[1] = nums[1]>1000?0:nums[1];
 }
 
 int add(const char *input){
-	int nums[2] = fetchNumbers(input);
-	int sum = overThousand(nums[0], nums[1]);
+	fetchNumbers(input);
+	overThousand();
+	int sum = 0;
+	while(nums[0]){
+		sum = sum + nums[0]%10;
+		nums[0]/=10;
+	}
+	while(nums[1]){
+		sum = sum + nums[1]%10;
+		nums[1]/=10;
+	}
 	return sum;
 }
 
