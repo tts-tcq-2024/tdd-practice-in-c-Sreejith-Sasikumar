@@ -9,9 +9,8 @@ void fetchNumbers(const char* str){
 	int i=0,j=0, sum=0;
 	while(str[i]){
 		if(isdigit(str[i])){
-			do{
+			while(isdigit(str[i]))
 				sum = sum*10+(str[i++]-'0');
-			}while(isdigit(str[i]));
 			nums[j++] = sum;
 			sum = 0;
 			i--;
