@@ -1,7 +1,6 @@
 #ifndef STRINGCALCULATOR_H
 #define STRINGCALCULATOR_H
 
-#include "StringCalculator.h"
 #include <ctype.h>
 
 int sumOfDigits(int s){
@@ -12,6 +11,7 @@ int sumOfDigits(int s){
 			s/=10;
 		}
 	}
+	printf("sumOfDigits result: %d\n", sum); // Debug statement
 	return sum;
 }
 
@@ -21,7 +21,9 @@ int add(const char *str){
 		while(isdigit(str[i++])){
 			s = (s*10) + str[i-1]-'0';
 		}
+		printf("s before sumOfDigits: %d\n", s); // Debug statement
 		sum = sum + sumOfDigits(s);
+		printf("sum after sumOfDigits: %d\n", sum); // Debug statement
 		s=0;
 	}
 	return sum;
