@@ -1,6 +1,3 @@
-#ifndef STRINGCALCULATOR_H
-#define STRINGCALCULATOR_H
-
 #include <ctype.h>
 
 int sumOfDigits(int s){
@@ -28,5 +25,3 @@ int add(const char *str){
 	}
 	return sum;
 }
-
-#endif // STRINGCALCULATOR_H
