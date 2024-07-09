@@ -5,8 +5,8 @@
 #include <ctype.h>
 
 int* fetchNumbers(char* str){
-int nums[]={0,0};
-int i=0,j=0, sum=0;
+	int nums[]={0,0};
+	int i=0,j=0, sum=0;
 	while(str[i]){
 		if(isdigit(str[i])){
 			do{
@@ -18,6 +18,7 @@ int i=0,j=0, sum=0;
 		}
 		i++;
 	}
+	return nums;
 }
 
 int digitsSum(int a, int b){
