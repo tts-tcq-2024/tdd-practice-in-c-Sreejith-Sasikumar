@@ -14,6 +14,7 @@ int sumOfDigits(int s){
 
 int add(const char *str){
 	int i=0, s=0, sum = 0;
+	printf("Input: %s", str); // Debug statement
 	while(str[i]){
 		while(isdigit(str[i++])){
 			s = (s*10) + str[i-1]-'0';
