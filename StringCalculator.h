@@ -12,13 +12,18 @@ int sumOfDigits(int s){
 	return sum;
 }
 
+int fetchNumber(const char* str, int i, int* s){
+	while(str[i]&&isdigit(str[i++])){
+		*s = ((*s)*10) + str[i-1]-'0';
+	}
+	return i;
+}
+
 int add(const char *str){
 	int i=0, s=0, sum = 0;
 	printf("Input: %s\n", str); // Debug statement
 	while(str[i]){
-		while(isdigit(str[i++])){
-			s = (s*10) + str[i-1]-'0';
-		}
+		i = fetchNumber(str, i, &s);
 		printf("s before sumOfDigits: %d\n i = %d\n", s,i); // Debug statement
 		sum = sum + sumOfDigits(s);
 		printf("sum after sumOfDigits: %d\n", sum); // Debug statement
