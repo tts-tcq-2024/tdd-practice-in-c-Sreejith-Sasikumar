@@ -8,7 +8,6 @@ int sumOfDigits(int s){
 			s/=10;
 		}
 	}
-	printf("sumOfDigits result: %d\n", sum); // Debug statement
 	return sum;
 }
 
@@ -21,12 +20,9 @@ int fetchNumber(const char* str, int i, int* s){
 
 int add(const char *str){
 	int i=0, s=0, sum = 0;
-	printf("Input: %s\n", str); // Debug statement
 	while(str[i]){
 		i = fetchNumber(str, i, &s);
-		printf("s before sumOfDigits: %d\n i = %d\n", s,i); // Debug statement
 		sum = sum + sumOfDigits(s);
-		printf("sum after sumOfDigits: %d\n", sum); // Debug statement
 		s=0;
 	}
 	return sum;
