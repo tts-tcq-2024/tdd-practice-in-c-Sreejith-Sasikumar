@@ -14,12 +14,12 @@ int sumOfDigits(int s){
 
 int add(const char *str){
 	int i=0, s=0, sum = 0;
-	printf("Input: %s", str); // Debug statement
+	printf("Input: %s\n", str); // Debug statement
 	while(str[i]){
 		while(isdigit(str[i++])){
 			s = (s*10) + str[i-1]-'0';
 		}
-		printf("s before sumOfDigits: %d\n", s); // Debug statement
+		printf("s before sumOfDigits: %d\n i = %d\n", s,i); // Debug statement
 		sum = sum + sumOfDigits(s);
 		printf("sum after sumOfDigits: %d\n", sum); // Debug statement
 		s=0;
