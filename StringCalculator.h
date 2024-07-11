@@ -3,10 +3,11 @@
 int isNegative(const char* str){
 	int ret = 0, i = 0;
 	while(str[i]){
-		if(str[i++] == '-'){
+		if(str[i] == '-'){
 			printf("Negatives not allowed\n");
 			ret = 1;
 		}
+		i++;
 	}
 	return ret;
 }
