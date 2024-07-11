@@ -1,13 +1,11 @@
 #include <ctype.h>
-#include <stdbool.h>
 
-bool isNegative(const char* str){
-	bool ret = false;
-	int i = 0;
+int isNegative(const char* str){
+	int ret = 0, i = 0;
 	while(str[i]){
 		if(str[i++] == '-'){
 			printf("Negatives not allowed\n");
-			ret = true;
+			ret = 1;
 		}
 	}
 	return ret;
@@ -33,9 +31,7 @@ int fetchNumber(const char* str, int i, int* s){
 
 int add(const char *str){
 	int i=0, s=0, sum = 0;
-	if (isNegative(str))
-		return 0;
-	else
+	if (isNegative(str) != 0)
 		while(str[i]){
 			i = fetchNumber(str, i, &s);
 			sum = sum + sumOfDigits(s);
