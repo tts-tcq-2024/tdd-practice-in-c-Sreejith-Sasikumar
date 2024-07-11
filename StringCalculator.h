@@ -32,7 +32,7 @@ int fetchNumber(const char* str, int i, int* s){
 
 int add(const char *str){
 	int i=0, s=0, sum = 0;
-	if (isNegative(str) != 0)
+	if (isNegative(str) == 0)
 		while(str[i]){
 			i = fetchNumber(str, i, &s);
 			sum = sum + sumOfDigits(s);
